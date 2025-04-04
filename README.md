@@ -190,6 +190,53 @@ python deduplicate_and_filter_final.py
 streamlit run streamlit_app.py
 
 
+---
+
+## 🔍 Example Outputs & Visual Insights
+
+Here’s a quick walkthrough of the pipeline in action:
+
+### 📊 Training Metrics & Model Behavior
+
+**F1 Score vs Confidence**  
+![F1 Curve](examples/F1_curve.png)
+
+**Precision vs Confidence**  
+![Precision Curve](examples/P_curve.png)
+
+---
+
+### 🧠 YOLOv8 Predictions on Validation Tiles
+
+**Sample Prediction – val_batch0**  
+![Prediction 0](examples/val_batch0_pred.jpg)
+
+**Sample Prediction – val_batch1**  
+![Prediction 1](examples/val_batch1_pred.jpg)
+
+---
+
+### 🗺️ GIS Integration Output
+
+**Final Detection Overlay in QGIS**  
+Bounding boxes converted to UTM, deduplicated, and displayed on the original orthomosaic.
+
+![QGIS Overlay](examples/Final_QGIS_Output.png)
+
+---
+
+### 🚀 Streamlit Demo
+
+**Live Tile Prediction (via Streamlit)**  
+This tile was uploaded through the Streamlit UI and predicted live using the trained model.
+
+![Streamlit App](examples/StreamlitApp.png)
+
+**Uploaded Tile**  
+![Uploaded Tile](examples/tile_31200_22400.tif)
+
+---
+
 
 📝 License
 This repository is licensed under the MIT License.
