@@ -195,10 +195,10 @@ Always extract your raster metadata when working with a different image.
 ## Model Performance
  
    ```
-   Set	        mAP@0.5	 Precision	Recall	F1 Score
-   Train	0.907	 0.861	        0.876	0.868
-   Validation	0.844	 0.846	        0.797	0.821
-   Test	        0.779	 0.835	        0.738	0.784
+   Set	          mAP@0.5    Precision	 Recall	 F1 Score
+   Train	  0.907	     0.861	 0.876	 0.868
+   Validation	  0.844	     0.846	 0.797	 0.821
+   Test	          0.779	     0.835	 0.738	 0.784
    ```
 
 ✅ Model: YOLOv8s (22.6MB)
@@ -255,6 +255,8 @@ Here’s a quick walkthrough of the pipeline in action:
 ![Prediction 1](examples/val_batch1_pred.jpg)
 
 ---
+
+
 
 ## License
 This repository is licensed under the MIT License.
