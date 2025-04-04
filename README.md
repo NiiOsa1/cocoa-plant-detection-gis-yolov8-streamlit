@@ -12,7 +12,7 @@
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Full Detection Pipeline](#full-detection-pipeline)
-- [GIS Integration](qgis-integration)
+- [QGIS Integration](qgis-integration)
 - [Streamlit Web Demo](#streamlit-web-demo)
 - [Geo-Referencing Details](#geo-referencing-details)
 - [Dataset Notes](#dataset-notes)
