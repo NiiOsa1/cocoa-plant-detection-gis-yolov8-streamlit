@@ -165,10 +165,12 @@ This tile was uploaded through the Streamlit UI and predicted live using the tra
 
   These values were extracted from the original orthomosaic (Image_4.tif) and used to convert pixel detections into map-based coordinates (UTM):
 
+  ```
   Origin X      = 525765.6597     ← Upper-left X in UTM meters
   Origin Y      = 8702143.3199    ← Upper-left Y in UTM meters
   Pixel Width   = 0.01298099167   ← ~1.3 cm per pixel
   Pixel Height  = -0.01298099167  ← Negative = North-up
+  ```
 
 📌 Important: These values are dataset-specific.
 Always extract your raster metadata when working with a different image.
@@ -176,6 +178,7 @@ Always extract your raster metadata when working with a different image.
 
 ## Dataset Notes
 
+   ```
    Total training images: 1500
 
    1089 expertly labeled
@@ -187,15 +190,16 @@ Always extract your raster metadata when working with a different image.
    0 = cocoa-plant
 
    1 = hole
-
+   ```
 
 ## Model Performance
  
+   ```
    Set	        mAP@0.5	 Precision	Recall	F1 Score
    Train	0.907	 0.861	        0.876	0.868
    Validation	0.844	 0.846	        0.797	0.821
    Test	        0.779	 0.835	        0.738	0.784
-
+   ```
 
 ✅ Model: YOLOv8s (22.6MB)
 
