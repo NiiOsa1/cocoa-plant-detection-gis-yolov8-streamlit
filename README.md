@@ -7,24 +7,24 @@
 
 ---
 
-## 📚 Table of Contents
+##  Table of Contents
 
-- [✨ Overview](#overview)
-- [📁 Project Structure](#project-structure)
-- [🧠 Full Detection Pipeline](#full-detection-pipeline)
-- [🗺️ QGIS Integration](#️-#qgis-integration)
-- [🌐 Streamlit Web Demo](#streamlit-web-demo)
-- [📌 Geo-Referencing Details](#geo-referencing-details)
-- [📦 Dataset Notes](#dataset-notes)
-- [🚀 Model Performance](#model-performance)
-- [🧪 Reproducibility](#reproducibility)
-- [🖼️ Example Visuals](#-ample-visuals)
-- [📄 License](#license)
-- [👤 Maintainer](#maintainer)
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Full Detection Pipeline](#full-detection-pipeline)
+- [GIS Integration](#️-#qgis-integration)
+- [Streamlit Web Demo](#streamlit-web-demo)
+- [Geo-Referencing Details](#geo-referencing-details)
+- [Dataset Notes](#dataset-notes)
+- [Model Performance](#model-performance)
+- [Reproducibility](#reproducibility)
+- [xample Visuals](#-ample-visuals)
+- [License](#license)
+- [Maintainer](#maintainer)
 
 ---
 
-## ✨ Overview
+##  Overview
 
 This repository delivers a **production-ready AI pipeline** for detecting **cocoa plants and planting holes** from high-resolution aerial imagery using **YOLOv8** and **QGIS**.
 
@@ -38,7 +38,7 @@ It includes:
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```plaintext
 cocoa-gis-detection/
@@ -59,7 +59,7 @@ cocoa-gis-detection/
  ```
 ---
 
-## 🔄 Full Detection Pipeline
+##  Full Detection Pipeline
 
 1. **🧱 Tile Large Aerial Image**
    ```bash
@@ -97,7 +97,7 @@ cocoa-gis-detection/
    qgis_ready6_detections.gpkg
 
 
-##  🗺️ QGIS Integration
+## QGIS Integration
 
    This repo includes a ready-to-open QGIS project:
 
@@ -129,7 +129,7 @@ Bounding boxes converted to UTM, deduplicated, and displayed on the original ort
 
 
 
-## 🧪 Streamlit Web Demo
+##  Streamlit Web Demo
 
   A live demo is built with Streamlit for easy testing:
 
@@ -157,11 +157,11 @@ This tile was uploaded through the Streamlit UI and predicted live using the tra
 ![Streamlit App](examples/StreamlitApp.png)
 
 **Predicted Detection Output**
-![Detection Output](examples/Streamlit_Detection.png)
+![Detection Output](examples/StreamlitDetection.png)
 
 
 
-## 📌 Geo-Referencing Details
+## Geo-Referencing Details
 
   These values were extracted from the original orthomosaic (Image_4.tif) and used to convert pixel detections into map-based coordinates (UTM):
 
@@ -174,7 +174,7 @@ This tile was uploaded through the Streamlit UI and predicted live using the tra
 Always extract your raster metadata when working with a different image.
 
 
-## 📦 Dataset Notes
+## Dataset Notes
 
    Total training images: 1500
 
@@ -189,7 +189,7 @@ Always extract your raster metadata when working with a different image.
    1 = hole
 
 
-## 🚀 Model Performance
+## Model Performance
  
    Set	        mAP@0.5	 Precision	Recall	F1 Score
    Train	0.907	 0.861	        0.876	0.868
@@ -207,7 +207,7 @@ Always extract your raster metadata when working with a different image.
 
 
 
-## 🛠️ Reproducibility
+##Reproducibility
 
 Run the pipeline locally:
 
@@ -227,7 +227,7 @@ streamlit run streamlit_app.py
 
 ---
 
-## 🖼️ Example Visuals
+##Example Visuals
 
 Here’s a quick walkthrough of the pipeline in action:
 
@@ -251,12 +251,12 @@ Here’s a quick walkthrough of the pipeline in action:
 
 ---
 
-## 📝 License
+## License
 This repository is licensed under the MIT License.
 You’re free to use, modify, and distribute — with credit to the author.
 
 
-## 👨‍💻 Maintainer
+##💻 Maintainer
 Michael Mensah Ofeor
 🔗 GitHub – @NiiOsa1
 📩 michaelofeor2011@yahoo.com
