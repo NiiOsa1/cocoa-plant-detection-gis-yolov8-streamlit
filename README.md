@@ -10,16 +10,17 @@
 ## 📚 Table of Contents
 
 - [✨ Overview](#-overview)
-- [📁 Folder Structure](#-folder-structure)
-- [🔄 Full Detection Pipeline](#-full-detection-pipeline)
-- [🗺️ QGIS Integration](#-qgis-integration)
-- [🧪 Streamlit Web Demo](#-streamlit-web-demo)
+- [📁 Project Structure](#-project-structure)
+- [🧠 Full Detection Pipeline](#-full-detection-pipeline)
+- [🗺️ QGIS Integration](#️-qgis-integration)
+- [🌐 Streamlit Web Demo](#-streamlit-web-demo)
 - [📌 Geo-Referencing Details](#-geo-referencing-details)
 - [📦 Dataset Notes](#-dataset-notes)
 - [🚀 Model Performance](#-model-performance)
-- [🛠️ Reproducibility](#️-reproducibility)
-- [📝 License](#-license)
-- [👨‍💻 Maintainer](#-maintainer)
+- [🧪 Reproducibility](#-reproducibility)
+- [🖼️ Example Visuals](#-example-visuals)
+- [📄 License](#-license)
+- [👤 Maintainer](#-maintainer)
 
 ---
 
@@ -29,24 +30,33 @@ This repository delivers a **production-ready AI pipeline** for detecting **coco
 
 It includes:
 
-- 🧱 Tiling of large orthomosaic images  
-- 🤖 Batch object detection on tiles  
-- 🧹 Spatial deduplication and coordinate conversion  
-- 🗺️ GeoJSON/GPKG export for GIS tools  
-- 🌐 Real-time Streamlit demo to visualize predictions
+- 🧩 Tiling of large orthomosaic images
+- 🧠 Batch object detection on tiles
+- 🧭 Spatial deduplication and coordinate conversion
+- 🗂️ GeoJSON/GPKG export for GIS tools
+
 
 ---
 
 ## 📁 Project Structure
 
+```plaintext
 cocoa-gis-detection/
-├── tile_creator_overlap.py         # Create overlapping tiles from large .tif image
+├── tile_creator_overlap.py          # Create overlapping tiles from large .tif image
 ├── yolo_batch_inference_v2.py      # Batch inference with YOLOv8
 ├── deduplicate_and_filter_final.py # Convert to UTM coordinates, deduplicate, export GeoJSON
 ├── streamlit_app.py                # Web UI using Streamlit to run YOLOv8 on uploaded tiles
+├── examples/                       # Sample outputs (metrics, visualizations, tile)
+│   ├── F1_curve.png
+│   ├── P_curve.png
+│   ├── val_batch0_pred.jpg
+│   ├── val_batch1_pred.jpg
+│   ├── Final_QGIS_Output.png
+│   ├── StreamlitApp.png
+│   └── tile_31200_22400.tif
 ├── README.md                       # Project documentation (this file)
 └── LICENSE                         # MIT License
-
+ ```
 ---
 
 ## 🔄 Full Detection Pipeline
@@ -54,26 +64,28 @@ cocoa-gis-detection/
 1. **🧱 Tile Large Aerial Image**
    ```bash
    python tile_creator_overlap.py
+   ```
 
    Input: Image_4.tif
 
    Output: tiles1/ (1024×1024 px tiles with 22% overlap)
 
 2. 🧠 YOLOv8 Batch Inference
-   
+   ```bash
    python yolo_batch_inference_v2.py
+   ```
 
    Inference across all tiles
 
    Confidence: conf=0.22, IoU: 0.73
-
+0
    Outputs YOLO .txt forma
 
 
 3. 🌍 Convert to GeoJSON/GPKG
 
    python deduplicate_and_filter_final.py
-   
+ 
    Converts to map-based UTM coordinates
 
    Deduplicates detections from overlapping tiles
@@ -90,7 +102,7 @@ cocoa-gis-detection/
    This repo includes a ready-to-open QGIS project:
 
   📄 Project_Cocoa.qgz
-  
+ 
    Includes:
 
    Image_4.tif as the basemap
@@ -108,11 +120,22 @@ cocoa-gis-detection/
   All layers and styles will auto-load 🎯
 
 
+### 🗺️ GIS Integration Output
+
+**Final Detection Overlay in QGIS**
+Bounding boxes converted to UTM, deduplicated, and displayed on the original orthomosaic.
+
+![QGIS Overlay](examples/Final_QGIS_Output.png)
+
+
+
 🧪 Streamlit Web Demo
 
   A live demo is built with Streamlit for easy testing:
 
-  streamlit run streamlit_app.py
+  ```bash 
+     streamlit run streamlit_app.py
+  ```
 
 
 Features:
@@ -124,6 +147,18 @@ Features:
   Displays annotated predictions
 
   Fast + local — no data is uploaded
+
+
+### 🚀 Streamlit Demo
+
+**Live Tile Prediction (via Streamlit)**
+This tile was uploaded through the Streamlit UI and predicted live using the trained model.
+
+![Streamlit App](examples/StreamlitApp.png)
+
+**Uploaded Tile**
+![Uploaded Tile](examples/tile_31200_22400.tif)
+
 
 
 📌 Geo-Referencing Details
@@ -155,7 +190,7 @@ Always extract your raster metadata when working with a different image.
 
 
 🚀 Model Performance
-   
+ 
    Set	        mAP@0.5	 Precision	Recall	F1 Score
    Train	0.907	 0.861	        0.876	0.868
    Validation	0.844	 0.846	        0.797	0.821
@@ -177,22 +212,22 @@ Always extract your raster metadata when working with a different image.
 Run the pipeline locally:
 
 
-# 1. Tile image
+ 1. Tile image
 python tile_creator_overlap.py
 
-# 2. Run inference
+ 2. Run inference
 python yolo_batch_inference_v2.py
 
-# 3. Convert & deduplicate
+ 3. Convert & deduplicate
 python deduplicate_and_filter_final.py
 
-# Optional: Streamlit UI
+ Optional: Streamlit UI
 streamlit run streamlit_app.py
 
 
 ---
 
-## 🔍 Example Outputs & Visual Insights
+## 🖼️ Example Visuals
 
 Here’s a quick walkthrough of the pipeline in action:
 
@@ -206,7 +241,7 @@ Here’s a quick walkthrough of the pipeline in action:
 
 ---
 
-### 🧠 YOLOv8 Predictions on Validation Tiles
+### 🧠 Sample Predictions on Validation Tiles
 
 **Sample Prediction – val_batch0**  
 ![Prediction 0](examples/val_batch0_pred.jpg)
@@ -216,24 +251,12 @@ Here’s a quick walkthrough of the pipeline in action:
 
 ---
 
-### 🗺️ GIS Integration Output
+### 🗺️ QGIS Detection Overlay
 
 **Final Detection Overlay in QGIS**  
 Bounding boxes converted to UTM, deduplicated, and displayed on the original orthomosaic.
 
 ![QGIS Overlay](examples/Final_QGIS_Output.png)
-
----
-
-### 🚀 Streamlit Demo
-
-**Live Tile Prediction (via Streamlit)**  
-This tile was uploaded through the Streamlit UI and predicted live using the trained model.
-
-![Streamlit App](examples/StreamlitApp.png)
-
-**Uploaded Tile**  
-![Uploaded Tile](examples/tile_31200_22400.tif)
 
 ---
 
