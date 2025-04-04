@@ -18,7 +18,7 @@
 - [Dataset Notes](#dataset-notes)
 - [Model Performance](#model-performance)
 - [Reproducibility](#reproducibility)
-- [xample Visuals](#-ample-visuals)
+- [Example Visuals](#-ample-visuals)
 - [License](#license)
 - [Maintainer](#maintainer)
 
@@ -207,7 +207,7 @@ Always extract your raster metadata when working with a different image.
 
 
 
-##Reproducibility
+## Reproducibility
 
 Run the pipeline locally:
 
@@ -227,9 +227,10 @@ streamlit run streamlit_app.py
 
 ---
 
-##Example Visuals
+## Example Visuals
 
 Here’s a quick walkthrough of the pipeline in action:
+
 
 ### 📊 Training Metrics & Model Behavior
 
@@ -256,7 +257,8 @@ This repository is licensed under the MIT License.
 You’re free to use, modify, and distribute — with credit to the author.
 
 
-##💻 Maintainer
+## Maintainer 
+
 Michael Mensah Ofeor
 🔗 GitHub – @NiiOsa1
 📩 michaelofeor2011@yahoo.com
