@@ -5,6 +5,10 @@
 ![QGIS](https://img.shields.io/badge/GIS-QGIS_Compatible-green?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
+
+[![Live Demo](https://img.shields.io/badge/🔎%20Live%20Demo-Streamlit-blue?logo=streamlit)](https://cocoa-detector.streamlit.app)
+[![GitHub Repo](https://img.shields.io/badge/🧠%20GitHub-Repository-orange?logo=github)](https://github.com/NiiOsa1/cocoa-plant-detection-gis-yolov8-streamlit)
+
 ---
 
 ##  Table of Contents
